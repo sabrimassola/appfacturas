@@ -83,10 +83,10 @@ public class Factura {
                 .append("\n")
                 .append("\n#\t\t\tNombre\t\t\t$\t\t\tCant.\t\t\tTotal\n");
         for(int i = 0 ; i <indiceItems ; i++ ){
-            detalle.append( this.items[i].toString())
+            detalle.append(this.items[i].toString())
                    .append("\n");
         }
-        detalle.append("\nGran total:")
+        detalle.append("\nGran total: $")
                 .append(calcularTotal());
         return detalle.toString();
     }
