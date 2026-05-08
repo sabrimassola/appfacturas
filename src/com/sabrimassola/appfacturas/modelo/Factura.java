@@ -77,7 +77,7 @@ public class Factura {
                 .append(cliente.getNif())
                 .append("\nDescripcion:")
                 .append(this.descripcion);
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat df = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy");
         detalle.append("\nFecha de emision: ")
                 .append(df.format(this.fecha))
                 .append("\n")
