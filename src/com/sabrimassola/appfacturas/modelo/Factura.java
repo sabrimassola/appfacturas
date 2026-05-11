@@ -86,7 +86,7 @@ public class Factura {
             detalle.append(this.items[i].toString())
                    .append("\n");
         }
-        detalle.append("\nGran total: $")
+        detalle.append("\nTOTAL FINAL DE FACTURA: $")
                 .append(calcularTotal());
         return detalle.toString();
     }
