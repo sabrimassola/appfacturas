@@ -97,4 +97,8 @@ public class Factura {
     public String toString() {
         return generarDetalle();
     }
+
+    public float calcularIVA(){
+        return calcularTotal() * IVA;
+    }
 }
