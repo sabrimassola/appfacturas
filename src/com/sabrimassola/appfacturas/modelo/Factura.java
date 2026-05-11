@@ -11,7 +11,9 @@ public class Factura {
     private ItemFactura[] items;
     private int indiceItems;
     public static final int MAX_ITEMS = 10;
+    public static final float IVA = 0.21f;
     private static int ultimoFolio;
+
 
     public Factura(String descripcion, Cliente cliente) {
         this.descripcion = descripcion;
@@ -81,13 +83,18 @@ public class Factura {
         detalle.append("\nFecha de emision: ")
                 .append(df.format(this.fecha))
                 .append("\n")
-                .append("\n#\t\t\tNombre\t\t\t$\t\t\tCant.\t\t\tTotal\n");
+                .append("\n#\tNombre\t$\ttCant.\tTotal\n");
         for(int i = 0 ; i <indiceItems ; i++ ){
             detalle.append(this.items[i].toString())
                    .append("\n");
         }
-        detalle.append("\nTOTAL FINAL DE FACTURA: $")
-                .append(calcularTotal());
+      
+        detalle.append("\nSubtotal: $")
+                .append(calcularTotal())
+                .append("\nIVA: $")
+                .append(calcularIVA())
+                .append("\nTOTAL FINAL DE FACTURA CON IVA: $")
+                .append(calcularTotalConIVA());
         return detalle.toString();
     }
 
@@ -95,4 +102,12 @@ public class Factura {
     public String toString() {
         return generarDetalle();
     }
+
+    public float calcularIVA(){
+        return calcularTotal() * IVA;
+    }
+    public float calcularTotalConIVA(){
+        return calcularTotal() + calcularIVA();
+    }
+
 }
