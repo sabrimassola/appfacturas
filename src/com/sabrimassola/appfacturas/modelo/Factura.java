@@ -101,4 +101,8 @@ public class Factura {
     public float calcularIVA(){
         return calcularTotal() * IVA;
     }
+    public float calcularTotalConIVA(){
+        return calcularTotal() + calcularIVA();
+    }
+
 }
