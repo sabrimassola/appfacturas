@@ -83,13 +83,17 @@ public class Factura {
         detalle.append("\nFecha de emision: ")
                 .append(df.format(this.fecha))
                 .append("\n")
-                .append("\n#\t\t\tNombre\t\t\t$\t\t\tCant.\t\t\tTotal\n");
+                .append("\n#\tNombre\t$\ttCant.\tTotal\n");
         for(int i = 0 ; i <indiceItems ; i++ ){
             detalle.append(this.items[i].toString())
                    .append("\n");
         }
-        detalle.append("\nGran total: $")
-                .append(calcularTotal());
+        detalle.append("\nSubtotal: $")
+                .append(calcularTotal())
+                .append("\nIVA: $")
+                .append(calcularIVA())
+                .append("\nTotal con IVA: $")
+                .append(calcularTotalConIVA());
         return detalle.toString();
     }
 
