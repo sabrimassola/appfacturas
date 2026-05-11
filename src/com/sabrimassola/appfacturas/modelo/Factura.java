@@ -88,11 +88,12 @@ public class Factura {
             detalle.append(this.items[i].toString())
                    .append("\n");
         }
+      
         detalle.append("\nSubtotal: $")
                 .append(calcularTotal())
                 .append("\nIVA: $")
                 .append(calcularIVA())
-                .append("\nTotal con IVA: $")
+                .append("\nTOTAL FINAL DE FACTURA CON IVA: $")
                 .append(calcularTotalConIVA());
         return detalle.toString();
     }
