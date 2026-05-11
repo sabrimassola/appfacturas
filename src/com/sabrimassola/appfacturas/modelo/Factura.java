@@ -11,7 +11,9 @@ public class Factura {
     private ItemFactura[] items;
     private int indiceItems;
     public static final int MAX_ITEMS = 10;
+    public static final float IVA = 0.21f;
     private static int ultimoFolio;
+
 
     public Factura(String descripcion, Cliente cliente) {
         this.descripcion = descripcion;
